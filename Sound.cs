@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Withy;
+using System;
 
 namespace Withy{
     [
@@ -74,9 +75,8 @@ namespace Withy{
 
         public void Save()
         {
-            if (soundName == null || soundName.Count() == 0)
+            if (isNameIncorrect())
             {
-                Debug.LogError("Sound name is null");
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace Withy{
                 return;
             }
 
-            if (!Withy.SoundAssets.instance)
+            if (Withy.SoundAssets.instance == null)
             {
                 Debug
                     .LogError("Sound Assets object missing!");
@@ -104,7 +104,7 @@ namespace Withy{
         {
             isSaved = false;
 
-            if (!Withy.SoundAssets.instance)
+            if (Withy.SoundAssets.instance == null)
             {
                 Debug
                     .LogError("Sound Assets object missing!");
@@ -116,6 +116,32 @@ namespace Withy{
             }
 
             soundName = "";
+        }
+
+        public bool isNameIncorrect(){
+            if (soundName == null || soundName.Count() == 0)
+            {
+                Debug.LogError("Sound name is empty");
+                return true;
+            } 
+
+            if(soundName.Contains(" "))
+            {
+                Debug.LogError("Sound name cannot contain spaces");
+                return true;
+            } 
+            if(Char.IsNumber(soundName[0]))
+            {
+                Debug.LogError("Sound name cannot start with a number");
+                return true;
+            } 
+
+            if(!soundName.All(Char.IsLetterOrDigit)){
+                Debug.LogError("Sound name can only contain letters and numbers");
+                return true;
+            }
+
+            return false;
         }
     }
 }

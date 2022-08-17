@@ -75,10 +75,10 @@ namespace Withy{
 
         private static void CreateEnumFile(List<string> enumEntries)
         {
-            if (File.Exists(filePathAndName))
-            {
-                File.Delete (filePathAndName);
-            }
+            // if (File.Exists(filePathAndName))
+            // {
+            //     File.Delete (filePathAndName);
+            // }
 
             using (StreamWriter streamWriter = new StreamWriter(filePathAndName))
             {
@@ -90,7 +90,7 @@ namespace Withy{
                 }
                 streamWriter.WriteLine("}");
             }
-            AssetDatabase.Refresh();
+            //AssetDatabase.Refresh();
         }
 
         public static bool checkIfSoundFileExists(string soundName)
