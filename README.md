@@ -50,4 +50,4 @@ or
 
 This project is licensed under the [CC0 4.0 Universal](http://creativecommons.org/licenses/by/4.0)
 
-Feel free to use it, but please add my name as contributor.
+Feel free to use it, but please add my name as attribution.
