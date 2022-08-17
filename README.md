@@ -48,6 +48,6 @@ or
 
 ## License
 
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
+This project is licensed under the [CC0 4.0 Universal](http://creativecommons.org/licenses/by/4.0)
+
+Feel free to use it, but please add my name as contributor.
